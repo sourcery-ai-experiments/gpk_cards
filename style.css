@@ -183,3 +183,45 @@ button.btn {
         flex: 1 1 100%;
     }
 }
+/* Frosted glass effect */
+body {
+  background-image: url('images/background.jpg'); /* Replace 'background.jpg' with your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  backdrop-filter: blur(10px);
+}
+
+/* Floating elements */
+.background-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.background-elements::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('images/octagon.png'); /* Replace 'octagon.png' with your image */
+  background-size: contain;
+  background-repeat: repeat;
+  opacity: 0.3;
+  z-index: -1;
+  animation: float 10s infinite linear alternate; /* Adjust animation duration and timing function as needed */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
